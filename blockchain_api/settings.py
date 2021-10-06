@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'api',
+    'api.apps.ApiConfig',
 ]
 
 MIDDLEWARE = [
@@ -95,6 +95,8 @@ DATABASES['default'] = {
     'HOST': config("DB_HOST"),
     'PORT': config("DB_PORT"),
 }
+
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 100000000  # higher than the count of fields
 
 
 # Password validation
